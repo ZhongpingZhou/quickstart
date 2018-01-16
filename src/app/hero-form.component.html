@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Hero Form</h1>
+    <form #heroForm="ngForm">
+        <!--heroForm变量是一个到NgForm指令的引用，它代表该表单的整体。-->
+        <!--NgForm指令为form增补了一些额外特性。 它会控制那些带有ngModel指令和name属性的元素，
+        监听他们的属性（包括其有效性）。 它还有自己的valid属性，这个属性只有在它包含的每个控件都有效时才是真。-->
+        {{diagnostic}}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control"  id ="name" required  [(ngModel)]="model.name" name="name">
+            TODO: remove this: {{model.name}}
+        </div>
+
+        <div>
+            <label for="alterEgo">Alter Ego</label>
+            <input type="text" class="form-control" id="alterEgo" [(ngModel)]="model.alterEgo" name="alterEgo">
+            {{model.alterEgo}}
+        </div>
+        <div class=form-group>
+            <label for="power">Hero Power</label>
+            <select class="form-control" id="power" required [(ngModel)]="model.power" name ="power">
+                <option *ngFor ="let pow of powers" [value]="pow">
+                {{pow}}
+                </option>
+            </select>
+
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>

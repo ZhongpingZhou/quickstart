@@ -1,7 +1,13 @@
 import { Component } from '@angular/core';
+import { Hero } from './hero';
 
-@Component({
+@Component
+({
   selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>`,
+  templateUrl:'./app.component.html',
 })
-export class AppComponent  { name = 'Angular'; }
+export class AppComponent
+{
+  title="Tour of Heroes";
+  hero = new Hero(1,'batMan','rich','riqiu');
+}
